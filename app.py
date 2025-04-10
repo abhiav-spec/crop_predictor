@@ -1,9 +1,9 @@
 import numpy as np
 from flask import Flask, request, render_template
-import pickle
+import joblib
 
 flask_app = Flask(__name__)
-model = pickle.load(open('crop_model.pkl', 'rb'))
+model = joblib.load('crop_model.pkl')
 
 
 @flask_app.route('/')
